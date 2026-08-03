@@ -71,7 +71,7 @@ class VendingMachine:
             self._emit(f"[IGNORED] cANNOT SELECT '{code}' while in state {self.state.name}.")
             return
 
-        product = self.invenntory.get(code)
+        product = self.inventory.get(code)
         if product is None:
             self.state = State.ERROR
             self._emit(f"[ERROR] Invalid selection '{code}'.")
@@ -122,7 +122,7 @@ class VendingMachine:
 
     # ----------- inteernal transitions (not directly triggered by the user) -------------------------
     def _dispense(self):
-        product = self-inventory[self.selected_code]
+        product = self.inventory[self.selected_code]
         product.qty -= 1
         self._emit(f"[DISPENSE] Dispensing {product.name}. Remaining stock: {product.qty}.")
 
@@ -131,7 +131,7 @@ class VendingMachine:
 
         if change > 0:
             self.state = State.RETURN_CHANGE
-            self.return_change(change)
+            self._return_change(change)
         else:
             self._reset_transaction()
             self._emit("[DONE] Thank you for your purchase!")
