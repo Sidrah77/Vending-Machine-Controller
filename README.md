@@ -2,6 +2,7 @@
 
 ###Group members
 Sidrah Hashmi - 100915053
+Xaiver Leung - 101010662
 
 ###Selected Option
 Option 3 - Vending Machine Controller
