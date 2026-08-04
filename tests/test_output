@@ -1,0 +1,58 @@
+============================================================
+TEST 1: Normal purchase, exact change
+============================================================
+[SELECTED] Chocolate Bar (A2) - price $1.75. Please insert payment.
+[PAYMENT] Inserted $1.00. Balance: $1.00 / $1.75
+[PAYMENT] Inserted $0.75. Balance: $1.75 / $1.75
+[DISPENSE] Dispensing Chocolate Bar. Remaining stock: 1.
+[DONE] Thank you for your purchase!
+PASS
+
+============================================================
+TEST 2: Normal purchase, change returned
+============================================================
+[SELECTED] Water (B2) - price $1.25. Please insert payment.
+[PAYMENT] Inserted $2.00. Balance: $2.00 / $1.25
+[DISPENSE] Dispensing Water. Remaining stock: 4.
+[CHANGE] Returning $0.75 in change.
+[DONE] Thank you for your purchase!
+PASS
+
+============================================================
+TEST 3 (edge case): Selecting an out-of-stock item
+============================================================
+[SOLD OUT] 'Soda' (B1) is currently out of stock. Please choose another item.
+PASS
+
+============================================================
+TEST 4 (edge case): Invalid item code
+============================================================
+[ERROR] Invalid selection 'Z9'.
+[RECOVERED] Error cleared. Returning to IDLE.
+PASS
+
+============================================================
+TEST 5 (edge case): Cancel mid-transaction
+============================================================
+[SELECTED] Chips (A1) - price $1.50. Please insert payment.
+[PAYMENT] Inserted $0.50. Balance: $0.50 / $1.50
+[CANCELLED] Transaction cancelled. Returning $0.50.
+PASS
+
+============================================================
+TEST 6 (edge case): Insert coin before selecting an item
+============================================================
+[IGNORED] Cannot insert coin in state IDLE. Select an item first.
+PASS
+
+============================================================
+TEST 7: Insufficient payment, then top-up completes purchase
+============================================================
+[SELECTED] Chips (A1) - price $1.50. Please insert payment.
+[PAYMENT] Inserted $0.50. Balance: $0.50 / $1.50
+[PAYMENT] Inserted $1.00. Balance: $1.50 / $1.50
+[DISPENSE] Dispensing Chips. Remaining stock: 2.
+[DONE] Thank you for your purchase!
+PASS
+
+All tests passed.
