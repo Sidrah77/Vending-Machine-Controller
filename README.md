@@ -1,10 +1,12 @@
 # Vending-Machine-Controller
 
 ###Group members
+
 Sidrah Hashmi - 100915053
 Xaiver Leung - 101010662
 
 ###Selected Option
+
 Option 3 - Vending Machine Controller
 
 ###Overview
@@ -50,6 +52,7 @@ anaconda3/python.exe tests/test_vending_machine.py
 This runs 7 test cases (normal purchases + 5 edge cases) and prints PASS/FAIL for each.
 
 ###Design notes/simplification
+
 -inventory is fixed at 4 items to keep the project manageable
 - Money is tracked in integer cents to avoid floating-point rounding error
 - "Dispensing" and "returning change" are modeled as automatic internal transitions rather than separate user-triggered inputs, since a real machine performs these immediately once payment is sufficient
