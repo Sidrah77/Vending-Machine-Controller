@@ -1,6 +1,7 @@
 STATE TRANSITION TABLE
 
 CURRENT STATE  |        INPUT/EVENT          |                    CONDITION                      |    NEXT STATE    |  OUTPUT/ACTION
+————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 IDLE           |  select(code)               |  Valid product and in stock                       |  ITEM_SELECTED   |  Display selected product and price
 IDLE           |  select(code)               |  Invalid product code                             |  ERROR           |  Display error message: "Invalid selection"
 IDLE           |  select(code)               |  Product out of stock                             |  IDLE            |  Display "Sold Out" message
@@ -22,6 +23,7 @@ ERROR          |  cancel()                   |  Any input                       
 STATE DESCRIPTIONS
 
 State            |  Description
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 IDLE             |  Waiting for the customer to select a product
 ITEM_SELECTED    |  A valid product has been selected. The machine waits for payment
 DISPENSING       |  The machine dispenses the selected product and updates the inventory
