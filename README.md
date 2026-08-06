@@ -28,6 +28,7 @@ The FSM has 5 states (IDLE, ITEM_SELECTED, DISPENSING, RETURN_CHANGE, ERROR) and
 6. ERROR can only be exited with acknowledge()
 
 ###How To Run
+
 Requirements - Python 
 
 Interactive demo:
