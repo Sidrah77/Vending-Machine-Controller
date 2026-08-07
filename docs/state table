@@ -1,3 +1,16 @@
+STATE DESCRIPTIONS
+
+State            |  Description
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+IDLE             |  Waiting for the customer to select a product
+ITEM_SELECTED    |  A valid product has been selected. The machine waits for payment
+DISPENSING       |  The machine dispenses the selected product and updates the inventory
+RETURN_CHANGE    |  The machine returns any extra money to the customer before completing the transaction
+ERROR            |  The machine has detected an invalid selection or invalid payment and waits for the error to be acknowledged
+
+
+
+
 STATE TRANSITION TABLE
 
 CURRENT STATE  |        INPUT/EVENT          |                    CONDITION                      |    NEXT STATE    |  OUTPUT/ACTION
@@ -17,15 +30,3 @@ DISPENSING     |  Internal(_dispense())      |  Change required                 
 RETURN_CHANGE  |  Internal(_return_change()) |  Change returned                                  |  IDLE            |  Return change and complete transaction
 ERROR          |  acknowledge()              |  Error acknowledged                               |  IDLE            |  Clear error and reset transaction
 ERROR          |  cancel()                   |  Any input                                        |  ERROR           |  Ignore request and instruct user to use acknowledge()
-
-
-
-STATE DESCRIPTIONS
-
-State            |  Description
-———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-IDLE             |  Waiting for the customer to select a product
-ITEM_SELECTED    |  A valid product has been selected. The machine waits for payment
-DISPENSING       |  The machine dispenses the selected product and updates the inventory
-RETURN_CHANGE    |  The machine returns any extra money to the customer before completing the transaction
-ERROR            |  The machine has detected an invalid selection or invalid payment and waits for the error to be acknowledged
