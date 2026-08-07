@@ -1,6 +1,6 @@
 # Vending-Machine-Controller
 
-###Group members
+###Group members (INFR 2810)
 
 Sidrah Hashmi - 100915053
 Xaiver Leung - 101010662
